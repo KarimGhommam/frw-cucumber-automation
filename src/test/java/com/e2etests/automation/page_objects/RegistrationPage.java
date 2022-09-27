@@ -4,21 +4,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.e2etests.automation.utils.ConfigFileReader;
 import com.e2etests.automation.utils.Setup;
-
-
 
 public class RegistrationPage {
 	private ConfigFileReader configFileReader;
 
 	@FindBy(how = How.LINK_TEXT, using = "REGISTER")
 	public static WebElement linkRegister;
-	@FindBy(how = How.XPATH, using = "//tbody/tr[2]/td[2]/input[1]")
+	@FindBy(how = How.NAME, using = "firstName")
 	public static WebElement firstName;
 	@FindBy(how = How.NAME, using = "lastName")
 	public static WebElement lastName;
@@ -34,6 +29,8 @@ public class RegistrationPage {
 	public static WebElement province;
 	@FindBy(how = How.NAME, using = "postalCode")
 	public static WebElement postalCode;
+	@FindBy(how = How.NAME, using = "country")
+	public static WebElement country;
 	@FindBy(how = How.ID, using = "email")
 	public static WebElement userName;
 	@FindBy(how = How.NAME, using = "password")
@@ -42,7 +39,7 @@ public class RegistrationPage {
 	public static WebElement confirmPassword;
 	@FindBy(how = How.NAME, using = "submit")
 	public static WebElement btnsubmitRegistration;
-	@FindBy(how = How.PARTIAL_LINK_TEXT, using = "Lobnaster")
+	@FindBy(how = How.XPATH, using = "//b[contains(text(),'Note: Your user name is ')]")
 	public static WebElement messageRegistration;
 	
 
@@ -66,10 +63,8 @@ public class RegistrationPage {
 		btnsubmitRegistration.click();
 	}
 
-	public void fillFirstName(String name) {
-		Setup.driver.manage().deleteAllCookies();
-		WebDriverWait wait = new WebDriverWait(Setup.driver, java.time.Duration.ofSeconds(30));
-		firstName = wait.until(ExpectedConditions.visibilityOf(firstName));
+	public void fillFirstName(String name) throws InterruptedException {
+		Thread.sleep(3000); 
 		firstName.sendKeys(name);
 	}
 
@@ -90,9 +85,10 @@ public class RegistrationPage {
 		city.sendKeys(cityAddress);
 	}
 
-	public void selectCountry(String country) {
-		Select select = new Select(city);
-		select.selectByValue(country);
+	public void selectCountry(String country1) throws InterruptedException {
+		Thread.sleep(3000);
+		Select select = new Select(country);
+		select.selectByValue(country1);
 	}
 
 	public void fillEmail(String emailValue) {
@@ -115,7 +111,8 @@ public class RegistrationPage {
 		postalCode.sendKeys(postaleCodeValue);
 	}
 
-	public void fillProvince(String provinceValue) {
+	public void fillProvince(String provinceValue) throws InterruptedException {
+		Thread.sleep(3000); 
 		province.sendKeys(provinceValue);
 	}
 

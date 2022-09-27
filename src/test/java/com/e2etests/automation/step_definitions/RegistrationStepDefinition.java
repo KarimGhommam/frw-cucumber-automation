@@ -29,12 +29,12 @@ public class RegistrationStepDefinition {
 		registrationPage.clickOnRegistrationLink();
 	}
 	@When("Je saisie le firstname {string}")
-	public void jeSaisieLeFirstname(String firstName) {
+	public void jeSaisieLeFirstname(String firstName) throws InterruptedException {
 		registrationPage.fillFirstName(firstName);
 	}
 	@When("Je saisie lastname {string}")
 	public void jeSaisieLastname(String lastName) {
-		//registrationPage.fillLastName(lastName);
+		registrationPage.fillLastName(lastName);
 	}
 	@When("Je saisie phone {string}")
 	public void jeSaisiePhone(String phone) {
@@ -53,7 +53,7 @@ public class RegistrationStepDefinition {
 		registrationPage.fillCity(city);
 	}
 	@When("Je saisie provance {string}")
-	public void jeSaisieProvance(String province) {
+	public void jeSaisieProvance(String province) throws InterruptedException {
 		registrationPage.fillProvince(province);
 	    
 	}
@@ -62,7 +62,7 @@ public class RegistrationStepDefinition {
 		registrationPage.fillPostalCode(postalCode);
 	}
 	@When("Je selectionne country {string}")
-	public void jeSelectionneCountry(String country) {
+	public void jeSelectionneCountry(String country) throws InterruptedException {
 		registrationPage.selectCountry(country);
 	}
 	@When("Je saisie username {string}")
