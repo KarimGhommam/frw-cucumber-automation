@@ -64,24 +64,29 @@ public class RegistrationPage {
 	}
 
 	public void fillFirstName(String name) throws InterruptedException {
-		Thread.sleep(3000); 
+		Thread.sleep(8000); 
+		firstName.clear();
 		firstName.sendKeys(name);
 	}
 
 	public void fillUserName(String name) throws InterruptedException {
 		Thread.sleep(3000); 
+		userName.clear();
 		userName.sendKeys(name);
 	}
 
 	public void fillLastName(String name) {
+		lastName.clear();
 		lastName.sendKeys(name);
 	}
 
 	public void fillAddress(String addressValue) {
+		address.clear();
 		address.sendKeys(addressValue);
 	}
 
 	public void fillCity(String cityAddress) {
+		city.clear();
 		city.sendKeys(cityAddress);
 	}
 
@@ -92,27 +97,33 @@ public class RegistrationPage {
 	}
 
 	public void fillEmail(String emailValue) {
+		email.clear();
 		email.sendKeys(emailValue);
 	}
 
 	public void fillPassword(String passwordValue) {
+		password.clear();
 		password.sendKeys(passwordValue);
 	}
 
 	public void fillConfirmPassword(String passwordValue) {
+		confirmPassword.clear();
 		confirmPassword.sendKeys(passwordValue);
 	}
 
 	public void fillPhone(String phoneValue) {
+		phone.clear();
 		phone.sendKeys(phoneValue);
 	}
 
 	public void fillPostalCode(String postaleCodeValue) {
+		postalCode.clear();
 		postalCode.sendKeys(postaleCodeValue);
 	}
 
 	public void fillProvince(String provinceValue) throws InterruptedException {
 		Thread.sleep(3000); 
+		province.clear();
 		province.sendKeys(provinceValue);
 	}
 
