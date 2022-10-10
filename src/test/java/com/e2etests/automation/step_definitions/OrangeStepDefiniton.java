@@ -48,9 +48,9 @@ public class OrangeStepDefiniton {
 	}
 
 	@When("Je clique sur le boutton logout")
-	public void jeCliqueSurLeBouttonLogout() throws InterruptedException {
+	public void jeCliqueSurLeBouttonLogout()  {
 		orangePage.clickOnlogout();
-		Thread.sleep(30000);
+		
 	}
 
 	@Then("Je me redirige vers la page home")
