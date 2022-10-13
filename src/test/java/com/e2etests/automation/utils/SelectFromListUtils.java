@@ -4,9 +4,6 @@ package com.e2etests.automation.utils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-/**
- * author Zied Hannachi
- * */
 
 /**
  * This class is used to select value from dropdown list.
